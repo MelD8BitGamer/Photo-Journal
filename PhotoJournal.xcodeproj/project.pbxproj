@@ -9,20 +9,22 @@
 /* Begin PBXBuildFile section */
 		4DAC384323DA5B8300D8E68E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAC384223DA5B8300D8E68E /* AppDelegate.swift */; };
 		4DAC384523DA5B8300D8E68E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAC384423DA5B8300D8E68E /* SceneDelegate.swift */; };
-		4DAC384723DA5B8300D8E68E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAC384623DA5B8300D8E68E /* ViewController.swift */; };
+		4DAC384723DA5B8300D8E68E /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAC384623DA5B8300D8E68E /* PhotoViewController.swift */; };
 		4DAC384A23DA5B8300D8E68E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DAC384823DA5B8300D8E68E /* Main.storyboard */; };
 		4DAC384C23DA5B8500D8E68E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DAC384B23DA5B8500D8E68E /* Assets.xcassets */; };
 		4DAC384F23DA5B8500D8E68E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DAC384D23DA5B8500D8E68E /* LaunchScreen.storyboard */; };
 		4DAC385823DA635100D8E68E /* PhotoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAC385723DA635100D8E68E /* PhotoCollectionCell.swift */; };
 		4DAC385B23DA637D00D8E68E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAC385A23DA637D00D8E68E /* Model.swift */; };
 		4DAC385D23DA69BD00D8E68E /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAC385C23DA69BD00D8E68E /* UploadViewController.swift */; };
+		4DAC386423DCF67F00D8E68E /* PersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAC386323DCF67F00D8E68E /* PersistenceHelper.swift */; };
+		4DAC386723DCF6DA00D8E68E /* FileManager&Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAC386623DCF6DA00D8E68E /* FileManager&Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4DAC383F23DA5B8300D8E68E /* PhotoJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DAC384223DA5B8300D8E68E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DAC384423DA5B8300D8E68E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4DAC384623DA5B8300D8E68E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4DAC384623DA5B8300D8E68E /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		4DAC384923DA5B8300D8E68E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4DAC384B23DA5B8500D8E68E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DAC384E23DA5B8500D8E68E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -30,6 +32,8 @@
 		4DAC385723DA635100D8E68E /* PhotoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionCell.swift; sourceTree = "<group>"; };
 		4DAC385A23DA637D00D8E68E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		4DAC385C23DA69BD00D8E68E /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
+		4DAC386323DCF67F00D8E68E /* PersistenceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceHelper.swift; sourceTree = "<group>"; };
+		4DAC386623DCF6DA00D8E68E /* FileManager&Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager&Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 				4DAC384223DA5B8300D8E68E /* AppDelegate.swift */,
 				4DAC384423DA5B8300D8E68E /* SceneDelegate.swift */,
 				4DAC385623DA618300D8E68E /* Controllers */,
+				4DAC386523DCF68700D8E68E /* DataPersistence */,
 				4DAC384B23DA5B8500D8E68E /* Assets.xcassets */,
 				4DAC384D23DA5B8500D8E68E /* LaunchScreen.storyboard */,
 				4DAC385023DA5B8500D8E68E /* Info.plist */,
@@ -78,7 +83,7 @@
 			children = (
 				4DAC384823DA5B8300D8E68E /* Main.storyboard */,
 				4DAC385C23DA69BD00D8E68E /* UploadViewController.swift */,
-				4DAC384623DA5B8300D8E68E /* ViewController.swift */,
+				4DAC384623DA5B8300D8E68E /* PhotoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -90,6 +95,15 @@
 				4DAC385723DA635100D8E68E /* PhotoCollectionCell.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		4DAC386523DCF68700D8E68E /* DataPersistence */ = {
+			isa = PBXGroup;
+			children = (
+				4DAC386323DCF67F00D8E68E /* PersistenceHelper.swift */,
+				4DAC386623DCF6DA00D8E68E /* FileManager&Extensions.swift */,
+			);
+			path = DataPersistence;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,9 +177,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DAC386723DCF6DA00D8E68E /* FileManager&Extensions.swift in Sources */,
 				4DAC385B23DA637D00D8E68E /* Model.swift in Sources */,
 				4DAC385D23DA69BD00D8E68E /* UploadViewController.swift in Sources */,
-				4DAC384723DA5B8300D8E68E /* ViewController.swift in Sources */,
+				4DAC384723DA5B8300D8E68E /* PhotoViewController.swift in Sources */,
+				4DAC386423DCF67F00D8E68E /* PersistenceHelper.swift in Sources */,
 				4DAC384323DA5B8300D8E68E /* AppDelegate.swift in Sources */,
 				4DAC385823DA635100D8E68E /* PhotoCollectionCell.swift in Sources */,
 				4DAC384523DA5B8300D8E68E /* SceneDelegate.swift in Sources */,
