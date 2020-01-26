@@ -21,7 +21,7 @@ class PhotoCollectionCell: UICollectionViewCell {
     
     @IBOutlet weak var photoNameGiven: UILabel!
     @IBOutlet weak var photoDateTaken: UILabel!
-    @IBOutlet weak var photoReceived: UIImageView!
+    @IBOutlet weak var photoReceivedView: UIImageView!
     
   //step2: creating custom delegation: - define optional delegate variable
         weak var delegate: PhotoCellDelegate?
@@ -36,6 +36,7 @@ class PhotoCollectionCell: UICollectionViewCell {
         
         override func layoutSubviews() {
             super.layoutSubviews()
+            //the layer of the cell make it rounded
             layer.cornerRadius = 20.0
             backgroundColor = .orange
             //step 3: long press set up - added gesture to view
@@ -58,7 +59,7 @@ class PhotoCollectionCell: UICollectionViewCell {
             guard let image = UIImage(data: imageObject.imageData) else {
                 return
             }
-            photoReceived.image = image
+            photoReceivedView.image = image
         }
     }
 
