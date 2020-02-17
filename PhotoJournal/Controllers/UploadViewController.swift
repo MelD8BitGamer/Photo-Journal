@@ -8,18 +8,21 @@
 
 import UIKit
 import AVFoundation
-
+//TODO: fix the add Photo button it does not persist. fix textview
 class UploadViewController: UIViewController {
 
+    @IBOutlet weak var uploadTextView: UITextView!
     
     @IBOutlet weak var uploadedOrEditedPhoto: UIImageView!
+    private var userText = ""
+    
     //this is some controller that you present to the  user and they are embedded into navigation controller
      private let imagePickerController = UIImagePickerController()
     private var selectedImage: UIImage? {
            didSet {
                //gets Property Observer called when new image is selected. So anytime I change my image i want to insert my photo in the collectionview
                //there is no dispatch main CAUSE WE ARE NOT DOING ANY ASYCHRONOUS CALLS
-               //appendNewPhotoCollection()
+               appendNewPhotoToCollection()
            }
        }
     
@@ -27,11 +30,24 @@ class UploadViewController: UIViewController {
         super.viewDidLoad()
         //this is an instance of picker controller and who is listening I am listening- keep in mind you can have the delegate object somewhere else. You need to conform to 2 protocols in order to use this which is UI
              imagePickerController.delegate = self
-       
+        uploadTextView.delegate = self
     }
     
 
-    @IBAction func enteredTextForPhoto(_ sender: UITextField) {
+    @IBAction func savePhotoPressed(_ sender: UIBarButtonItem) {
+        appendNewPhotoToCollection()
+    }
+    
+
+    @IBAction func addPhotoButtonPressed(_ sender: UIBarButtonItem) {
+        selectPhoto()
+    }
+    //TODO: Camera not working COMPILER ERROR: simultaneously satisfy constraints.
+    //Probably at least one of the constraints in the following list is one you don't want.
+    @IBAction func cameraButtonPressed(_ sender: UIBarButtonItem) {
+        
+        imagePickerController.sourceType = .camera
+        present(imagePickerController, animated: true)
     }
     
     private func showImageController(isCameraSelected: Bool) {
@@ -60,9 +76,11 @@ class UploadViewController: UIViewController {
 
                    }// the action is what you want to use
                    //If you want to use some modifing action so we default but if you want it red alert then use .destructive such as to delete
+        
                    let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default) { [weak self] alertAction in
                        self?.showImageController(isCameraSelected: false)
                    }
+        
                 //you NEED to have an Cancel action
                    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
                    //check if camera is available, if camera is not available the app will crash, is the sourceType available
@@ -71,6 +89,8 @@ class UploadViewController: UIViewController {
                        alertController.addAction(cameraAction)//so now its added
                    }
                    //Setting what the action sheet contains in the order we have it in
+       
+                    alertController.addAction(cameraAction)
                    alertController.addAction(photoLibraryAction)
                    alertController.addAction(cancelAction)
                    present(alertController, animated: true)//Alert controller is the product//you can have a completion if you were presenting something after that
@@ -102,5 +122,15 @@ extension UploadViewController: UIImagePickerControllerDelegate, UINavigationCon
         }
         selectedImage = image //If I dont do this my image will always be nil
         dismiss(animated: true)
+    }
+}
+
+extension UploadViewController: UITextViewDelegate {
+    func textViewDidEndEditing(_ textView: UITextView) {
+        guard let text = textView.text else {
+            //showAlert()
+            return
+        }
+        userText = text
     }
 }

@@ -74,11 +74,6 @@ class PhotoViewController: UIViewController {
             fatalError("Could not segue")}
         navigationController?.pushViewController(uploadVC, animated: true)
     }
-    
-    
- 
-
-    
 
 }
 

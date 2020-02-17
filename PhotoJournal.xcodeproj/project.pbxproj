@@ -18,6 +18,7 @@
 		4DAC385D23DA69BD00D8E68E /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAC385C23DA69BD00D8E68E /* UploadViewController.swift */; };
 		4DAC386423DCF67F00D8E68E /* PersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAC386323DCF67F00D8E68E /* PersistenceHelper.swift */; };
 		4DAC386723DCF6DA00D8E68E /* FileManager&Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAC386623DCF6DA00D8E68E /* FileManager&Extensions.swift */; };
+		4DE62F6D23FADD3600A3781D /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE62F6C23FADD3600A3781D /* ShowAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		4DAC385C23DA69BD00D8E68E /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		4DAC386323DCF67F00D8E68E /* PersistenceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceHelper.swift; sourceTree = "<group>"; };
 		4DAC386623DCF6DA00D8E68E /* FileManager&Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager&Extensions.swift"; sourceTree = "<group>"; };
+		4DE62F6C23FADD3600A3781D /* ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,12 +69,10 @@
 			isa = PBXGroup;
 			children = (
 				4DAC385923DA635E00D8E68E /* Model */,
-				4DAC384223DA5B8300D8E68E /* AppDelegate.swift */,
-				4DAC384423DA5B8300D8E68E /* SceneDelegate.swift */,
 				4DAC385623DA618300D8E68E /* Controllers */,
 				4DAC386523DCF68700D8E68E /* DataPersistence */,
-				4DAC384B23DA5B8500D8E68E /* Assets.xcassets */,
-				4DAC384D23DA5B8500D8E68E /* LaunchScreen.storyboard */,
+				4DE62F6E23FADD4200A3781D /* Supporting Files */,
+				4DE62F6F23FADD7300A3781D /* Extensions */,
 				4DAC385023DA5B8500D8E68E /* Info.plist */,
 			);
 			path = PhotoJournal;
@@ -81,7 +81,6 @@
 		4DAC385623DA618300D8E68E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4DAC384823DA5B8300D8E68E /* Main.storyboard */,
 				4DAC385C23DA69BD00D8E68E /* UploadViewController.swift */,
 				4DAC384623DA5B8300D8E68E /* PhotoViewController.swift */,
 			);
@@ -104,6 +103,26 @@
 				4DAC386623DCF6DA00D8E68E /* FileManager&Extensions.swift */,
 			);
 			path = DataPersistence;
+			sourceTree = "<group>";
+		};
+		4DE62F6E23FADD4200A3781D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4DAC384823DA5B8300D8E68E /* Main.storyboard */,
+				4DAC384D23DA5B8500D8E68E /* LaunchScreen.storyboard */,
+				4DAC384223DA5B8300D8E68E /* AppDelegate.swift */,
+				4DAC384423DA5B8300D8E68E /* SceneDelegate.swift */,
+				4DAC384B23DA5B8500D8E68E /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4DE62F6F23FADD7300A3781D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4DE62F6C23FADD3600A3781D /* ShowAlert.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +200,7 @@
 				4DAC385B23DA637D00D8E68E /* Model.swift in Sources */,
 				4DAC385D23DA69BD00D8E68E /* UploadViewController.swift in Sources */,
 				4DAC384723DA5B8300D8E68E /* PhotoViewController.swift in Sources */,
+				4DE62F6D23FADD3600A3781D /* ShowAlert.swift in Sources */,
 				4DAC386423DCF67F00D8E68E /* PersistenceHelper.swift in Sources */,
 				4DAC384323DA5B8300D8E68E /* AppDelegate.swift in Sources */,
 				4DAC385823DA635100D8E68E /* PhotoCollectionCell.swift in Sources */,

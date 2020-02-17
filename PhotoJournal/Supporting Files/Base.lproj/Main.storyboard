@@ -31,7 +31,7 @@
                             </toolbar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aO4-RO-eWf">
                                 <rect key="frame" x="0.0" y="88" width="414" height="681"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HKa-c1-hrV">
                                     <size key="itemSize" width="392" height="325"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -86,6 +86,7 @@
                                                 <constraint firstItem="NU3-48-XCA" firstAttribute="top" secondItem="FPO-uD-NLs" secondAttribute="top" id="zFS-uv-c0Z"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="392" height="325"/>
                                         <connections>
                                             <outlet property="photoDateTaken" destination="8bI-pW-Cw5" id="080-bf-e3T"/>
@@ -128,21 +129,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SX3-ou-M6T">
-                                <rect key="frame" x="43" y="518" width="328" height="316"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SX3-ou-M6T">
+                                <rect key="frame" x="43" y="365" width="328" height="316"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nzZ-fi-NsJ">
-                                <rect key="frame" x="43" y="190" width="351" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ObJ-Ga-wHa">
+                                <rect key="frame" x="0.0" y="811" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem title="Item" image="camera.viewfinder" catalog="system" width="100" id="NIX-U3-cT9">
+                                        <connections>
+                                            <action selector="cameraButtonPressed:" destination="Zkl-xc-8XY" id="0v3-a3-Lot"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Rea-HK-smA"/>
+                                    <barButtonItem image="plus" catalog="system" width="100" id="qwU-5c-Lg2">
+                                        <connections>
+                                            <action selector="addPhotoButtonPressed:" destination="Zkl-xc-8XY" id="j8L-6v-Or6"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LjI-Zj-72P">
+                                <rect key="frame" x="43" y="128" width="328" height="197"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="enteredTextForPhoto:" destination="Zkl-xc-8XY" eventType="editingDidEnd" id="wsr-pI-Ii1"/>
-                                </connections>
-                            </textField>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ObJ-Ga-wHa" firstAttribute="top" secondItem="SX3-ou-M6T" secondAttribute="bottom" constant="130" id="5hA-8I-io1"/>
+                            <constraint firstItem="LjI-Zj-72P" firstAttribute="top" secondItem="jeV-Nh-A86" secondAttribute="top" constant="40" id="YT2-DB-NjW"/>
+                            <constraint firstItem="ObJ-Ga-wHa" firstAttribute="leading" secondItem="ry9-5I-mua" secondAttribute="leadingMargin" constant="-20" id="ZOv-BD-LdN"/>
+                            <constraint firstItem="jeV-Nh-A86" firstAttribute="trailing" secondItem="LjI-Zj-72P" secondAttribute="trailing" constant="43" id="eNa-va-3ti"/>
+                            <constraint firstItem="SX3-ou-M6T" firstAttribute="height" secondItem="ry9-5I-mua" secondAttribute="height" multiplier="0.352679" id="faN-xz-RNz"/>
+                            <constraint firstItem="SX3-ou-M6T" firstAttribute="leading" secondItem="jeV-Nh-A86" secondAttribute="leading" constant="43" id="hl2-ez-yWf"/>
+                            <constraint firstItem="LjI-Zj-72P" firstAttribute="leading" secondItem="jeV-Nh-A86" secondAttribute="leading" constant="43" id="jGH-Qb-7ix"/>
+                            <constraint firstItem="SX3-ou-M6T" firstAttribute="width" secondItem="ry9-5I-mua" secondAttribute="width" multiplier="0.792271" id="lh5-09-lg5"/>
+                            <constraint firstItem="SX3-ou-M6T" firstAttribute="top" secondItem="LjI-Zj-72P" secondAttribute="bottom" constant="40" id="p1o-w9-JtI"/>
+                            <constraint firstItem="ObJ-Ga-wHa" firstAttribute="centerX" secondItem="SX3-ou-M6T" secondAttribute="centerX" id="pQw-Hf-D7S"/>
+                            <constraint firstItem="LjI-Zj-72P" firstAttribute="height" secondItem="ry9-5I-mua" secondAttribute="height" multiplier="0.219866" id="w2r-Ye-DxL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="jeV-Nh-A86"/>
                     </view>
                     <navigationItem key="navigationItem" id="SEa-xu-6gY">
@@ -150,11 +179,15 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DGK-b2-4Dx">
                                 <rect key="frame" x="302" y="7" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Save"/>
                             </button>
+                            <connections>
+                                <action selector="savePhotoPressed:" destination="Zkl-xc-8XY" id="9yh-UY-Ni0"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="uploadTextView" destination="LjI-Zj-72P" id="JP1-fp-DOb"/>
                         <outlet property="uploadedOrEditedPhoto" destination="SX3-ou-M6T" id="F3a-3b-Zqm"/>
                     </connections>
                 </viewController>
@@ -200,6 +233,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="camera.viewfinder" catalog="system" width="64" height="56"/>
         <image name="pencil.and.ellipsis.rectangle" catalog="system" width="64" height="40"/>
         <image name="plus" catalog="system" width="64" height="56"/>
     </resources>
